@@ -5,10 +5,14 @@ const args = process.argv
 const comando = args[2].toLowerCase().trim()        
 const titulo = args[3]
 
+//lista que armazena as tarefas 
+const tarefas = []
+
 //opções para cada comando
 switch (comando) {
     case "add":
-        console.log("Adicionando tarefas")
+        tarefas.push(titulo)            //adiciona ao final da lista
+        console.log(tarefas)
         break;
     case "list":
         console.log("Listando tarefas")
