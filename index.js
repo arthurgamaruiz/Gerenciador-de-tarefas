@@ -21,19 +21,20 @@ const tarefa = {
 //opções para cada comando
 switch(comando){
     case "add":
-        tarefas.push(tarefa)
-        const jsonString = JSON.stringify(tarefas, null, 2)   
-        fs.writeFileSync('tarefas.json', jsonString)            //salva tudo de volta no arquivo
+        tarefas.push(tarefa)                                  //adiciona o objeto tarefa à lista tarefas
+        const jsonString = JSON.stringify(tarefas, null, 2)   //converte valores e objetos js em uma string JSON   
+        fs.writeFileSync('tarefas.json', jsonString)          //salva tudo de volta no arquivo
         console.log("Tarefa adicionada!")
         break;
     case "list":
+        //leitura do arquivo
         fs.readFile('tarefas.json', (err, data) => {
             if(err) throw err
-            console.log(data.toString())
+            console.log(data.toString())                      //exibe o conteúdo do arquivo
         })
         break;
     case "remove":
-        console.log("Removendo tarefas")
+        console.log("Tarefa removida com sucesso!")
         break;
     default:
         console.log("Comando inválido")
