@@ -27,6 +27,10 @@ switch(comando){
         console.log("Tarefa adicionada!")
         break;
     case "list":
+        fs.readFile('tarefas.json', (err, data) => {
+            if(err) throw err
+            console.log(data.toString())
+        })
         break;
     case "remove":
         console.log("Removendo tarefas")
