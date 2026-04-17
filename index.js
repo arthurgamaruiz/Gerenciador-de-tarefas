@@ -11,7 +11,7 @@ const tarefas = JSON.parse(dados)
 //separando em comando e título da tarefa
 //formato: comando tarefa id status
 //JSON
-const comando = args[2]
+const comando = args[2].toLocaleLowerCase().trim()
 const tarefa = {
     id: tarefas.length+1, 
     titulo: args[3], 
@@ -19,7 +19,7 @@ const tarefa = {
 }
 
 //opções para cada comando
-switch (comando) {
+switch(comando){
     case "add":
         tarefas.push(tarefa)
         const jsonString = JSON.stringify(tarefas, null, 2)   
