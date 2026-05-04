@@ -11,7 +11,7 @@ const tarefas = JSON.parse(dados)
 //separando em comando e título da tarefa
 //formato: comando tarefa id status
 //JSON
-const comando = args[2].toLocaleLowerCase().trim()
+const comando = args[2].toLowerCase().trim()        //tratamento do comando 
 const tarefa = {
     id: tarefas.length+1, 
     titulo: args[3], 
